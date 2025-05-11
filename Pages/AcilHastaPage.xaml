@@ -1,0 +1,161 @@
+﻿<Page x:Class="hastane_odev.Pages.AcilHastaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Acil Hasta Yönetimi"
+      Background="#f5f7fa">
+
+    <Page.Resources>
+        <!-- Button Style -->
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="15,8" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AcilButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}"/>
+
+        <!-- Input Control Style -->
+        <Style x:Key="InputControlStyle" TargetType="Control">
+            <Setter Property="Margin" Value="0,5,0,15" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#dcdfe6" />
+            <Setter Property="Background" Value="#ffffff" />
+        </Style>
+
+        <Style x:Key="AcilInputStyle" TargetType="Control" BasedOn="{StaticResource InputControlStyle}"/>
+
+        <!-- List Item Style -->
+        <Style x:Key="EmergencyListItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#e0e0e0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AcilListItemStyle" TargetType="ListBoxItem" BasedOn="{StaticResource EmergencyListItemStyle}"/>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0"
+               Text="🚑 Acil Hasta Yönetimi"
+               FontSize="26"
+               FontWeight="Bold"
+               Foreground="#3949ab"
+               Margin="5,0,5,15" />
+
+        <!-- Content Grid -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- New Patient Panel -->
+            <Border Grid.Column="0"
+                Background="White"
+                CornerRadius="15"
+                Padding="20"
+                Margin="0,0,10,0">
+                <StackPanel>
+                    <TextBlock Text="Yeni Acil Hasta"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="#3949ab"
+                           Margin="0,0,0,15" />
+
+                    <TextBlock Text="Ad Soyad" Margin="0,0,0,5" />
+                    <TextBox x:Name="txtAdSoyad" Style="{StaticResource AcilInputStyle}" />
+
+                    <TextBlock Text="T.C. Kimlik No" Margin="0,0,0,5" />
+                    <TextBox x:Name="txtTCKN" Style="{StaticResource AcilInputStyle}" />
+
+                    <TextBlock Text="Aciliyet" Margin="0,0,0,5" />
+                    <ComboBox x:Name="cmbAciliyet"
+                          Style="{StaticResource AcilInputStyle}"
+                          SelectedValuePath="Tag">
+                        <ComboBoxItem Tag="Kritik" Content="Kritik" />
+                        <ComboBoxItem Tag="Orta" Content="Orta" />
+                        <ComboBoxItem Tag="Hafif" Content="Hafif" />
+                    </ComboBox>
+
+                    <Button x:Name="btnEkle"
+                        Style="{StaticResource AcilButtonStyle}"
+                        Background="#f44336"
+                        Width="150"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        Click="BtnEkle_Click"
+                        Content="Kuyruğa Ekle" />
+                </StackPanel>
+            </Border>
+
+            <!-- Queue List Panel -->
+            <Border Grid.Column="1"
+                Background="White"
+                CornerRadius="15"
+                Padding="20"
+                Margin="10,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="Acil Hasta Listesi"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="#3949ab"
+                           Margin="0,0,0,15" />
+
+                    <ListBox x:Name="lstKuyruk"
+                         ItemContainerStyle="{StaticResource AcilListItemStyle}"
+                         Background="#f8f9fa"
+                         BorderBrush="#e0e0e0"
+                         Height="300"
+                         BorderThickness="1" />
+
+                    <Button x:Name="btnCagir"
+                        Style="{StaticResource AcilButtonStyle}"
+                        Background="#3949ab"
+                        Width="180"
+                        Margin="0,15,0,0"
+                        HorizontalAlignment="Right"
+                        Click="BtnCagir_Click"
+                        Content="Sıradaki Hastayı Çağır" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

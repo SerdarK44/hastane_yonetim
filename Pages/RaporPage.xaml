@@ -1,0 +1,20 @@
+﻿<Page x:Class="hastane_odev.Pages.RaporPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Rapor">
+
+    <Grid Margin="30">
+        <StackPanel>
+            <TextBlock Text="📄 Rapor Oluştur" FontSize="22" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <TextBlock Text="T.C. Kimlik No"/>
+            <TextBox x:Name="txtTCKN" Margin="0,5,0,10"/>
+
+            <Button Content="Raporla" Click="BtnRaporla_Click" Width="100" Margin="0,0,0,10"/>
+
+            <TextBox x:Name="txtRapor" Height="300" Margin="0,5" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+            <Button Content="Kaydet" Click="BtnKaydet_Click" Width="100" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

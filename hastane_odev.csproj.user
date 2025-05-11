@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\AcilHastaPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Giris.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HakkindaPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HastaEklePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HastaListePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\IstatistikPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MuayeneEklePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MuayeneGecmisPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RaporPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\TcAramaPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AcilHastaPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Giris.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\HakkindaPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\HastaEklePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\HastaListePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\IstatistikPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MuayeneEklePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MuayeneGecmisPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RaporPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\TcAramaPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
