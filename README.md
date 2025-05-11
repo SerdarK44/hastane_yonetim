@@ -6,8 +6,7 @@ Bu proje, bağlı liste, yığın, kuyruk ve ikili arama ağacı gibi veri yapı
 
 ## 👤 Geliştirici
 
-- **Ad:** Serdar Külek  
-- **Dönem:** Bahar 2025  
+- **Ad:** Serdar Külek   
 - **Teknolojiler:** C#, WPF, .NET 8.0, XAML
 
 ---
